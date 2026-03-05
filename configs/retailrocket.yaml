@@ -1,0 +1,25 @@
+dataset: retailrocket
+paths:
+  raw_dir: data/raw/retailrocket
+  processed_dir: data/processed/retailrocket
+  artifacts_dir: artifacts/retailrocket
+model:
+  embedding_dim: 64
+  batch_size: 8192
+  lr: 0.003
+  weight_decay: 0.0
+  negative_samples: 20
+  seed: 42
+retrieval:
+  faiss_nlist: 512
+  faiss_nprobe: 16
+  top_candidates: 200
+reranker:
+  num_leaves: 64
+  learning_rate: 0.05
+  n_estimators: 300
+  min_data_in_leaf: 200
+data:
+  max_users: 200000
+  min_user_interactions: 3
+  test_holdout: 1

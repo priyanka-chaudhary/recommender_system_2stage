@@ -1,0 +1,25 @@
+dataset: mind
+paths:
+  raw_dir: data/raw/mind
+  processed_dir: data/processed/mind
+  artifacts_dir: artifacts/mind
+model:
+  embedding_dim: 64
+  batch_size: 4096
+  lr: 0.003
+  weight_decay: 0.0
+  negative_samples: 50
+  seed: 42
+retrieval:
+  faiss_nlist: 64
+  faiss_nprobe: 16
+  top_candidates: 500
+reranker:
+  num_leaves: 64
+  learning_rate: 0.05
+  n_estimators: 300
+  min_data_in_leaf: 200
+data:
+  max_users: 20000
+  min_user_interactions: 3
+  test_holdout: 1
