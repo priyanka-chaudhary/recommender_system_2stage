@@ -1,4 +1,4 @@
-Two-Stage Recommender for Editorial Homepage Recommendations
+# Two-Stage Recommender for Editorial Homepage Recommendations
 
 This project implements a production-style two-stage recommender system for editorial homepage recommendations using the Microsoft MIND Small dataset.
 
@@ -10,7 +10,7 @@ Candidate reranking with a LightGBM LambdaRank model
 
 For fast retrieval, item embeddings are indexed with FAISS. Recommendations are exposed through a FastAPI endpoint.
 
-Project goal
+### Project goal
 
 The goal of the project was to build a realistic recommender pipeline similar to modern homepage feed systems, where:
 
@@ -20,7 +20,7 @@ a second ranking model then reorders those candidates for better relevance
 
 This setup reflects how large-scale recommender systems are often designed in practice, especially when ranking across large candidate spaces.
 
-Dataset
+## Dataset
 
 I used Microsoft MIND Small, a public dataset for news recommendation research.
 
