@@ -66,7 +66,11 @@ def train_reranker(dataset: str = typer.Option(...)):
     )
 
 @app.command("eval-offline")
-def eval_offline(dataset: str = typer.Option(...), k: int = typer.Option(10)):
+def eval_offline(
+    dataset: str = typer.Option(...),
+    k: int = typer.Option(10),
+    save_md: str = typer.Option(None, help="Path to save a markdown results file"),
+):
     cfg = load_config(dataset)
     eval_run(
         processed_dir=cfg.paths.processed_dir,
@@ -74,6 +78,7 @@ def eval_offline(dataset: str = typer.Option(...), k: int = typer.Option(10)):
         top_candidates=cfg.retrieval.top_candidates,
         nprobe=cfg.retrieval.faiss_nprobe,
         k=k,
+        save_md=save_md,
     )
 
 if __name__ == "__main__":

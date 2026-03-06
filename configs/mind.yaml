@@ -8,7 +8,7 @@ model:
   batch_size: 4096
   lr: 0.003
   weight_decay: 0.0
-  negative_samples: 50
+  negative_samples: 100
   seed: 42
 retrieval:
   faiss_nlist: 64
@@ -20,6 +20,6 @@ reranker:
   n_estimators: 300
   min_data_in_leaf: 200
 data:
-  max_users: 20000
-  min_user_interactions: 3
+  max_users: 50000
+  min_user_interactions: 10
   test_holdout: 1

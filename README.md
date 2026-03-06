@@ -158,6 +158,9 @@ cp configs/mind.yaml "$EXP_DIR/mind.yaml"
 
 # run pipeline
 python -m src.cli prepare-data --dataset mind --max-users 50000
+
+python -c "import pandas as pd; t=pd.read_parquet('data/processed/mind/train.parquet'); te=pd.read_parquet('data/processed/mind/test.parquet'); print('users', t.user_id.nunique(), 'items', t.item_id.nunique(), 'train', len(t), 'test', len(te))" | tee "$EXP_DIR/data_stats.txt"
+
 python -m src.cli train-two-tower --dataset mind --epochs 10
 python -m src.cli build-index --dataset mind
 python -m src.cli train-reranker --dataset mind
