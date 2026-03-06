@@ -58,7 +58,7 @@ The two-stage recommender outperformed the popularity baseline by **31.1% relati
 | **Two-stage recommender** | **0.02652** | **0.05776** | **0.01726** |
 | **Relative lift** | **+31.1%** | **+18.0%** | **+45.0%** |
 
-### Baselines
+### ⚖️ Baselines
 
 To make the evaluation more realistic, I compare the two-stage model against three baselines:
 
@@ -76,7 +76,7 @@ To make the evaluation more realistic, I compare the two-stage model against thr
    - Recommend the most popular items within that category. If fewer than K are available, fill the remaining slots with global popular items.
    - Purpose: a stronger baseline than global popularity, especially for active users.
 
-### Best run (official)
+### 🏆 Best run (official)
 
 This is the current strongest run. Results are stored in:
 `artifacts/mind/experiments/mind_50k_min10_e20_neg100/results_with_baselines.md`
@@ -124,7 +124,7 @@ Note: raising `min_user_interactions` changes the evaluation cohort. Global popu
 
 ---
 
-### What I learned
+### :pencil2: What I learned
 This project helped me understand several core recommender system concepts:
 * Why strong baselines matter
 * Why candidate retrieval quality is critical
